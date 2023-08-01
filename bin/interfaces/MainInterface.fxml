@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchor" maxHeight="688.0" maxWidth="700.0" minHeight="688.0" minWidth="700.0" prefHeight="688.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainInterfaceController">
+   <children>
+      <VBox prefHeight="688.0" prefWidth="700.0" style="-fx-background-color: white;">
+         <children>
+            <VBox prefHeight="344.0" prefWidth="100.0">
+               <children>
+                  <ImageView fitHeight="200.0" fitWidth="224.0" pickOnBounds="true" preserveRatio="true">
+                     <VBox.margin>
+                        <Insets left="235.0" right="1.0" top="40.0" />
+                     </VBox.margin>
+                     <image>
+                        <Image url="@../images/wekode.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label graphicTextGap="7.0" prefHeight="67.0" prefWidth="149.0" style="-fx-font-family: Helvetica bold; -fx-font-size: 30; -fx-font-weight: bold;" text="SEKUR" textOverrun="CENTER_ELLIPSIS">
+                     <VBox.margin>
+                        <Insets left="270.0" top="2.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <HBox prefHeight="393.0" prefWidth="700.0" style="-fx-background-color: #ff6701;">
+               <children>
+                  <VBox prefHeight="369.0" prefWidth="290.0">
+                     <children>
+                        <Label prefHeight="41.0" prefWidth="176.0" text="Système d'exploitation" textFill="#eeeeee">
+                           <padding>
+                              <Insets bottom="20.0" />
+                           </padding>
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Button fx:id="btn_os" mnemonicParsing="false" onAction="#open_os" prefHeight="35.0" prefWidth="177.0" style="-fx-background-color: white; -fx-border-radius: 10px;" text="CHOISIR L'OS" textFill="#c95a0b">
+                           <VBox.margin>
+                              <Insets left="4.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Tahoma" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets top="100.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="369.0" prefWidth="299.0">
+                     <children>
+                        <Label text="Stockage" textFill="WHITE">
+                           <padding>
+                              <Insets bottom="20.0" />
+                           </padding>
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="50.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Button fx:id="btn_stockage" mnemonicParsing="false" onAction="#open_stockage" prefHeight="35.0" prefWidth="166.0" style="-fx-background-color: white; -fx-border-radius: 10px;" text="CHOISIR LE STOCKAGE" textFill="#c95a0b">
+                           <font>
+                              <Font name="Tahoma" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets top="100.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets left="80.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="369.0" prefWidth="292.0">
+                     <children>
+                        <Button id="button-42" fx:id="btn_ecrire" disable="true" mnemonicParsing="false" onAction="#ecrire" prefHeight="35.0" prefWidth="166.0" style="-fx-background-color: white; -fx-border-radius: 10px;" text="ECRIRE" textFill="#c95a0b">
+                           <VBox.margin>
+                              <Insets top="22.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Tahoma" size="12.0" />
+                           </font>
+                        </Button>
+                        <ImageView fx:id="imageview" fitHeight="68.0" fitWidth="64.0" onMouseClicked="#open_OSConfig" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets left="100.0" top="110.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../images/gear-removebg-preview.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets top="120.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets left="80.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

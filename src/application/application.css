@@ -1,0 +1,162 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+
+.TextField{
+	-fx-font-family: "Quicksand";
+   -fx-font-size: 18;
+   -fx-padding: 1,1,1,1;
+   -fx-border-color: grey;
+   -fx-border-width: 1;
+   -fx-border-radius: 3;
+   
+   -fx-background-color: transparent;
+   -fx-text-fill: grey;
+}
+.PasswordField{
+	-fx-font-family: "Quicksand";
+   -fx-font-size: 18;
+   -fx-padding: 1,1,1,1;
+   -fx-border-color: grey;
+   -fx-border-width: 1;
+   -fx-border-radius: 3;
+   
+   -fx-background-color: transparent;
+   -fx-text-fill: grey;
+}
+
+
+
+
+.custom-checkbox .box {
+    -fx-background-color: transparent;
+    -fx-background-radius: 3px;
+    -fx-border-color: #aaa;
+    -fx-border-radius: 3px;
+    -fx-border-width: 2px;
+    -fx-min-width: 10px;
+    -fx-min-height: 10px;
+    -fx-max-width: 10px;
+    -fx-max-height: 10px;
+}
+
+.custom-checkbox:selected .box {
+    -fx-background-color: transparent;
+}
+
+.custom-checkbox:selected .check-mark {
+    -fx-background-color: white;
+}
+
+.custom-checkbox .check-mark {
+    -fx-shape: "M 4.25 8.5 L 7.5 12 L 12.25 5.5";
+    -fx-stroke: white;
+    -fx-stroke-width: 2;
+    -fx-smooth: true;
+}
+.checkbox{
+	 -fx-background-color: #f0f0f0;
+    -fx-background-radius: 3px;
+    -fx-border-color: #f4ab7f;
+    -fx-border-radius: 3px;
+    -fx-border-width: 1px;
+	
+}
+.bgone{
+ -fx-background-color:#fdfde0;
+ }
+ .bg2{
+ -fx-background-color:#fdfde0;
+ 
+ }
+ .valider{
+ 	-fx-background-color:#FFD580;
+    -fx-background-radius: 3px;
+     -fx-border-radius: 15px;
+      -fx-border-width: 1px;
+      -fx-border-color:orange;
+      -fx-font-family:tahoma;
+  
+      
+      
+ 	}
+ 	.valider:hover{
+ 	
+      -fx-color:black;
+    -fx-background-color:#FFD580;
+      
+      
+ 	}
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	.combo-box .list-cell 
+{
+    -fx-background: white;
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-text-base-color;
+    -fx-padding: 3 0 2 7;
+    -fx-cell-size: 1.66667em; 
+    
+}
+
+.combo-box-popup .list-view 
+{
+    -fx-background-color: white, white;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 8, 0.0 , 0 , 0 );
+}    
+
+.combo-box-popup .list-view .list-cell 
+{
+    -fx-padding: 4 0 4 5;
+
+    /* No alternate highlighting */
+    -fx-background-color: white;
+}
+
+.combo-box-popup .list-view .list-cell:filled:selected, .combo-box-popup .list-view .list-cell:filled:selected:hover 
+{
+    -fx-background: -fx-accent;
+    -fx-background-color: -fx-selection-bar;
+    -fx-text-fill: -fx-selection-bar-text;
+}
+
+.combo-box-popup .list-view .list-cell:filled:hover 
+{
+    -fx-background-color: white;
+    -fx-text-fill: -fx-text-inner-color;
+}
+
+.combo-box-base  
+{
+    
+    -fx-background-color: white, white, white, white;
+    -fx-background-radius: 5, 5, 4, 3;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-padding: 0;
+}
+
+.combo-box-base:hover
+{
+    -fx-color: -fx-hover-base;
+}
+
+.combo-box-base:showing 
+{
+    -fx-color: -fx-pressed-base;
+}
+
+.combo-box-base:focused {
+    -fx-background-color: -fx-focus-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-background-radius: 6.4, 4, 5, 3;
+    -fx-background-insets: -1.4, 0, 1, 2;
+}
+
+.combo-box-base:disabled {
+    -fx-opacity: .4;
+}
+ 	

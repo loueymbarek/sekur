@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane prefHeight="900.0" styleClass="bg2" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Interface2Controller">
+   <content>
+      <AnchorPane id="bgone" fx:id="anchorprincipale" maxWidth="850.0" prefHeight="900.0" prefWidth="703.0" styleClass="bg2" stylesheets="@../application/application.css">
+         <children>
+            <AnchorPane fx:id="bg2" prefHeight="209.0" prefWidth="700.0" styleClass="bg2" stylesheets="@../application/application.css">
+               <children>
+                  <ImageView fx:id="image" fitHeight="108.0" fitWidth="134.0" layoutX="296.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/wekode-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="sekur_label" alignment="TOP_CENTER" layoutX="224.0" layoutY="151.0" prefHeight="49.0" prefWidth="258.0" style="-fx-font-family: Helvetica bold; -fx-font-size: 30px;" text="SEKUR" textAlignment="CENTER" textFill="#e85c1c" textOverrun="CENTER_ELLIPSIS" AnchorPane.leftAnchor="224.0" AnchorPane.rightAnchor="218.0">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="-2.0" layoutY="209.0" prefHeight="880.0" prefWidth="705.0" styleClass="bgone" stylesheets="@../../bin/application/application.css" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="209.0">
+               <children>
+                  <TextField fx:id="tf_os" layoutX="47.0" layoutY="40.0" prefWidth="200.0" promptText="OS" styleClass="TextField" stylesheets="@../../bin/application/application.css" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="50.0" />
+                  <TextField fx:id="tf_usb" layoutX="263.0" layoutY="27.0" prefWidth="200.0" promptText="USB" styleClass="TextField" stylesheets="@../../bin/application/application.css" AnchorPane.topAnchor="50.0" />
+                  <Separator layoutY="-3.0" prefHeight="8.0" prefWidth="700.0" style="color: orange;" />
+                  <TextField fx:id="tf_ssid" layoutX="47.0" layoutY="416.0" prefHeight="32.0" prefWidth="200.0" promptText="SSID" styleClass="TextField" stylesheets="@../../bin/application/application.css" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="420.0" />
+                  <PasswordField fx:id="tf_mdpwifi" layoutX="261.0" layoutY="420.0" prefHeight="26.0" prefWidth="200.0" promptText="mot de passe" styleClass="PasswordField" stylesheets="@../../bin/application/application.css" AnchorPane.topAnchor="420.0" />
+                  <CheckBox id="labels" fx:id="reglages_locaux" layoutX="46.0" layoutY="527.0" mnemonicParsing="false" onAction="#reglages_locaux_op" style="-fx-font-size: 17px;" styleClass="custom-checkbox" stylesheets="@../../bin/application/application.css" text="Défenir les réglages locaux" AnchorPane.leftAnchor="50.0" />
+                  <Label fx:id="fh_label" layoutX="21.0" layoutY="569.0" style="-fx-font-size: 20px;" stylesheets="@../../bin/application/application.css" text="fuseau horaire:" AnchorPane.leftAnchor="21.0" />
+                  <ComboBox fx:id="fuseau_horaire_cb" layoutX="220.0" layoutY="568.0" onAction="#fh_cb" opacity="0.73" prefHeight="28.0" prefWidth="175.0" styleClass="combo-box" stylesheets="@../application/application.css" visibleRowCount="2" AnchorPane.bottomAnchor="243.0" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="568.0" />
+                  <Label fx:id="tc_label" layoutX="50.0" layoutY="633.0" style="-fx-font-size: 20px;" text="Type de clavier :" AnchorPane.leftAnchor="21.0" />
+                  <ComboBox fx:id="type_clavier_cb" layoutX="220.0" layoutY="630.0" onAction="#type_clavier_cb" opacity="0.73" prefHeight="28.0" prefWidth="175.0" styleClass="combo-box" stylesheets="@../application/application.css" AnchorPane.leftAnchor="220.0" />
+                  <Button fx:id="btn_valider" layoutX="275.0" layoutY="796.0" mnemonicParsing="false" onAction="#btn_valider_op" prefHeight="43.0" prefWidth="350.0" style="-fx-background-color: orange; -fx-font-size: 15px;" styleClass="valider" stylesheets="@../../bin/application/application.css" text="Valider" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" />
+                  <CheckBox id="boxes" fx:id="check_os" layoutX="471.0" layoutY="54.0" mnemonicParsing="false" onAction="#os_operation" styleClass="custom-checkbox" stylesheets="@../../bin/application/application.css" AnchorPane.leftAnchor="471.0" />
+                  <Label id="labels" layoutX="47.0" layoutY="382.0" prefHeight="30.0" prefWidth="576.0" style="-fx-font-size: 20;" stylesheets="@../../bin/application/application.css" text="Configuration Wi-fi" AnchorPane.leftAnchor="50.0" />
+                  <CheckBox id="boxes" fx:id="check_camera" layoutX="47.0" layoutY="121.0" mnemonicParsing="false" onAction="#check_camera_op" style="-fx-font-size: 13px;" styleClass="custom-checkbox" stylesheets="@../../bin/application/application.css" AnchorPane.leftAnchor="50.0" />
+                  <CheckBox id="boxes" fx:id="check_micro" layoutX="47.0" layoutY="163.0" mnemonicParsing="false" onAction="#check_microphone_op" style="-fx-font-size: 13px;" styleClass="custom-checkbox" stylesheets="@../../bin/application/application.css" AnchorPane.leftAnchor="50.0" />
+                  <CheckBox id="boxes" fx:id="check_projecteur" layoutX="50.0" layoutY="208.0" mnemonicParsing="false" onAction="#check_projecteur_op" style="-fx-font-size: 13px;" styleClass="custom-checkbox" stylesheets="@../../bin/application/application.css" AnchorPane.leftAnchor="50.0" />
+                  <CheckBox id="boxes" fx:id="check_hautparleur" layoutX="47.0" layoutY="253.0" mnemonicParsing="false" onAction="#check_hautparleur_op" style="-fx-font-size: 13px;" styleClass="custom-checkbox" stylesheets="@../../bin/application/application.css" AnchorPane.leftAnchor="50.0" />
+                  <CheckBox id="boxes" fx:id="check_buzzeur" layoutX="47.0" layoutY="294.0" mnemonicParsing="false" onAction="#check_buzzeur_op" style="-fx-font-size: 13px;" styleClass="custom-checkbox" stylesheets="@../../bin/application/application.css" AnchorPane.leftAnchor="50.0" />
+                  <Label id="labels" layoutX="95.0" layoutY="121.0" prefHeight="26.0" prefWidth="133.0" style="-fx-font-size: 20;" stylesheets="@../../bin/application/application.css" text="Camèra" AnchorPane.leftAnchor="100.0" />
+                  <Label id="labels" layoutX="94.0" layoutY="163.0" prefHeight="26.0" prefWidth="133.0" style="-fx-font-size: 20;" stylesheets="@../../bin/application/application.css" text="Microphone" AnchorPane.leftAnchor="100.0" />
+                  <Label id="labels" layoutX="100.0" layoutY="208.0" prefHeight="26.0" prefWidth="133.0" style="-fx-font-size: 20;" stylesheets="@../../bin/application/application.css" text="Projecteur" AnchorPane.leftAnchor="100.0" />
+                  <Label id="labels" layoutX="94.0" layoutY="253.0" prefHeight="26.0" prefWidth="133.0" style="-fx-font-size: 20;" stylesheets="@../../bin/application/application.css" text="Haut-parleur" AnchorPane.leftAnchor="100.0" />
+                  <Label id="labels" layoutX="94.0" layoutY="294.0" prefHeight="26.0" prefWidth="133.0" style="-fx-font-size: 20;" stylesheets="@../../bin/application/application.css" text="Buzzeur" AnchorPane.leftAnchor="100.0" />
+                  <CheckBox id="labels" fx:id="check_hidden" layoutX="471.0" layoutY="421.0" mnemonicParsing="false" onAction="#check_hidden_op" style="-fx-font-size: 17px;" styleClass="custom-checkbox" stylesheets="@../../bin/application/application.css" text="Hidden" AnchorPane.leftAnchor="471.0" AnchorPane.topAnchor="421.0" />
+                  <CheckBox id="labels" fx:id="check_activer_ssh" layoutX="54.0" layoutY="477.0" mnemonicParsing="false" onAction="#activer_ssh_op" prefHeight="35.0" prefWidth="203.0" style="-fx-font-size: 17px;" styleClass="custom-checkbox" stylesheets="@../../bin/application/application.css" text="activer SSH" AnchorPane.leftAnchor="50.0" />
+                  <Label layoutX="302.0" layoutY="720.0" opacity="0.52" style="-fx-font-size: 19;" text="Avancement" textAlignment="JUSTIFY" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" />
+                  <ProgressBar fx:id="progress_bar" layoutX="61.0" layoutY="748.0" prefHeight="35.0" prefWidth="571.0" progress="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="748.0" />
+                  <Separator layoutX="-9.0" layoutY="353.0" prefHeight="0.0" prefWidth="705.0" />
+                  <Separator layoutY="673.0" prefHeight="5.0" prefWidth="705.0" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </content>
+   
+</ScrollPane>
