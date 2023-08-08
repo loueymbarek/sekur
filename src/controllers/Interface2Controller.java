@@ -32,6 +32,10 @@ import models.Fuseau_horaire;
 import models.type_clavier;
 
 public class Interface2Controller implements Initializable {
+	
+	private ImageISO imageiso;
+	
+	 private ImageService imageService;
 	   @FXML
 	    private ImageView image;
 
@@ -93,7 +97,7 @@ public class Interface2Controller implements Initializable {
     private ProgressBar progress_bar;
     @FXML
     void check_camera_op() {
-       //checkbox de camera en action
+  
         boolean isCameraSelected = check_camera.isSelected();
 
         if (isCameraSelected) {
@@ -102,6 +106,8 @@ public class Interface2Controller implements Initializable {
         } else {
         
         }
+        imageiso.setCameraChecked(check_camera.isSelected());
+        
     }
     @FXML
     void check_microphone_op() {
@@ -113,6 +119,7 @@ public class Interface2Controller implements Initializable {
         } else {
         
         }
+        imageiso.setMicroChecked(check_micro.isSelected());
 
     }
     @FXML
@@ -125,6 +132,7 @@ public class Interface2Controller implements Initializable {
         } else {
         
         }
+        imageiso.setBuzzeurChecked(check_buzzeur.isSelected());
 
     }
     @FXML
@@ -138,7 +146,8 @@ public class Interface2Controller implements Initializable {
         } else {
         
         }
-
+        imageiso.setProjecteurChecked(check_projecteur.isSelected());
+        
     }
     @FXML
     void check_hautparleur_op() { 
@@ -151,6 +160,7 @@ public class Interface2Controller implements Initializable {
         } else {
         
         }
+        imageiso.setHautparleurChecked(check_hautparleur.isSelected());
 
     }
 
@@ -186,6 +196,8 @@ public class Interface2Controller implements Initializable {
                 
                 System.out.println("SSH disctivated!");
             }
+            imageiso.setActiverSshChecked(check_activer_ssh.isSelected());
+           
     	}
     	
     
@@ -218,8 +230,10 @@ public class Interface2Controller implements Initializable {
 
                 // Update the progress bar on the JavaFX application thread
                 updateProgress(progress, 1.0);
+               
                 return null;
             }
+            
         };
 
         // Bind the progress bar's progress property to the task's progress property
@@ -228,6 +242,8 @@ public class Interface2Controller implements Initializable {
         // Start the task on a separate thread
         Thread thread = new Thread(task);
         thread.start();
+        imageiso.setProgressValue(progress_bar.getProgress());
+        
     }
 
     
@@ -264,6 +280,7 @@ public class Interface2Controller implements Initializable {
             alert.showAndWait();
             
         }
+        saveValuesToImageModel(); 
 
     }
 
@@ -285,12 +302,14 @@ public class Interface2Controller implements Initializable {
              tf_mdpwifi.setDisable(false); 
          
          }
-
+        
+         imageiso.setHiddenChecked(check_hidden.isSelected());
     }
 
     @FXML
     void fh_cb() {
     	 Fuseau_horaire selectedTimezone = (Fuseau_horaire) fuseau_horaire_cb.getValue();
+    	 imageiso.setFuseauHoraire(fuseau_horaire_cb.getValue());
     }
 
     @FXML
@@ -303,7 +322,7 @@ public class Interface2Controller implements Initializable {
           } else {
           
           }
-
+          imageiso.setOsChecked(check_os.isSelected());
     }
 
     @FXML
@@ -338,6 +357,7 @@ public class Interface2Controller implements Initializable {
         } else {
         	
         }
+        imageiso.setReglagesLocaux(reglages_locaux.isSelected());
     }
     
 
@@ -351,7 +371,7 @@ public class Interface2Controller implements Initializable {
     	 if(selectedType_clavier=="EN") {
     		 System.out.println("selected language"+" "+"English"+"");
     	 }
-    
+    	 imageiso.setReglagesLocaux(reglages_locaux.isSelected());
     }
     
  
@@ -451,11 +471,52 @@ private void addAnimationOnClickchceckbox1(CheckBox checkbox) {
         }
     });
 }
+@FXML
+private void saveValuesToImageModel() {
+    imageiso.setOs(tf_os.getText());
+    imageiso.setUsb(tf_usb.getText());
+    imageiso.setSsid(tf_ssid.getText());
+    imageiso.setMdpwifi(tf_mdpwifi.getText());
+    imageiso.setReglagesLocaux(reglages_locaux.isSelected());
+    imageiso.setFuseauHoraire(fuseau_horaire_cb.getValue());
+    imageiso.setTypeClavier(type_clavier_cb.getValue());
+    imageiso.setOsChecked(check_os.isSelected());
+    imageiso.setCameraChecked(check_camera.isSelected());
+    imageiso.setMicroChecked(check_micro.isSelected());
+    imageiso.setProjecteurChecked(check_projecteur.isSelected());
+    imageiso.setHautparleurChecked(check_hautparleur.isSelected());
+    imageiso.setBuzzeurChecked(check_buzzeur.isSelected());
+    
+    imageiso.setActiverSshChecked(check_activer_ssh.isSelected());
+    imageiso.setProgressValue(progress_bar.getProgress());
+    System.out.println(imageiso.toString());
+    
+   
+}
 
 
 		@Override
 		public void initialize(URL arg0, ResourceBundle arg1) {
 			// TODO Auto-generated method stub
+			
+			imageService = new ImageService();
+	        // Créez une instance d'Image Model et définissez-la dans ImageService
+			imageiso = new ImageISO();
+	        imageService.setImageModel(imageiso);
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			
+			
 			 reglages_locaux_op();
 			 addAnimationOnClickchceckbox(check_activer_ssh);
 			 addAnimationOnClickchceckbox(reglages_locaux);
